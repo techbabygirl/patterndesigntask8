@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telephone</title>
+</head>
+<body>
+    <!-- <input type="text" id="phoneNumberInput"> 
+    <button onClick="addNumberButton">Add Phone Number</button> 
+    <button onClick="removeNumberButton">Remove Phone Number</button> 
+    <button onClick="dialNumberButton">Dial Phone Number</button>
+    <ul id="phoneNumbersList"></ul> -->
+    
+    <script>
+     
+     class Telephone {
+    constructor() {
+        this.phoneNumbers = [];
+        this.observers = [];
+    }
+
+    // observer
+    addObserver(observer) {
+        this.observers.push(observer);
+    }
+
+    removeObserver(observer) {
+        const index = this.observers.indexOf(observer);
+        if (index !== -1) {
+            this.observers.splice(index, 1);
+        }
+    }
+
+    notifyObservers(phoneNumber) {
+        this.observers.forEach(observer => observer.notify(phoneNumber));
+    }
+
+    // phoneNumberS
+
+    addPhoneNumber(phoneNumber) {
+        this.phoneNumbers.push(phoneNumber);
+    }
+
+    removePhoneNumber(phoneNumber) {
+        const index = this.phoneNumbers.indexOf(phoneNumber);
+        if (index !== -1) {
+            this.phoneNumbers.splice(index, 1);
+        }
+    }
+
+
+
+}
+
+
+
+
+
+    </script>
+       
+</body>
+</html>
